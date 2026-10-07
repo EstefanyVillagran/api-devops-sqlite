@@ -64,3 +64,6 @@ jobs:
             sudo docker stop mi-api-container || true
             sudo docker rm mi-api-container || true
             sudo docker run -d --name mi-api-container -p 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/mi-api:latest
+            sleep 3
+            sudo docker ps -a
+            sudo docker logs mi-api-container
